@@ -24,7 +24,7 @@ module "api_gateway" {
 }
 ```
 
-Grant the backend SA `roles/run.invoker` on the Cloud Run backend. See [example/examplea](example/examplea) for a complete working example, including an [openapi.yaml](example/examplea/openapi.yaml) secured with an API key or a Google ID token.
+Grant the backend SA `roles/run.invoker` on the Cloud Run backend. See [example/examplea](example/examplea) for a complete working example, including an [openapi.yaml](example/examplea/openapi.yaml) secured with an API key (do not offer a bare Google ID token scheme as an alternative: any service account can mint one for any audience).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements

@@ -13,21 +13,18 @@ x-google-backend:
   address: https://hello-abc123-nw.a.run.app
   deadline: 30.0
   protocol: h2
+# Callers present an API key created in a consumer project (see the module's
+# consumers input). Do not add a Google ID token (accounts.google.com) scheme
+# as a separate entry under security: entries are alternatives, and any
+# service account in any project can mint a Google-signed ID token for an
+# arbitrary audience, so it would bypass the API key entirely.
 securityDefinitions:
   api_key:
     type: apiKey
     name: x-api-key
     in: header
-  google_id_token:
-    authorizationUrl: ""
-    flow: implicit
-    type: oauth2
-    x-google-issuer: https://accounts.google.com
-    x-google-jwks_uri: https://www.googleapis.com/oauth2/v3/certs
-    x-google-audiences: example-api
 security:
   - api_key: []
-  - google_id_token: []
 paths:
   /hello:
     get:

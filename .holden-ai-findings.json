@@ -1,0 +1,31 @@
+{
+  "category": "all",
+  "findings": [
+    {
+      "confidence": "high",
+      "explanation": "Top-level security lists '- api_key' and '- google_id_token' as separate entries, which OpenAPI 2.0 treats as alternatives. google_id_token trusts issuer https://accounts.google.com with audience 'example-api', and any service account in any project can mint a Google-signed ID token for an arbitrary audience via generateIdToken, so the API key and the consumers grant the module manages are bypassed. The engine does not parse the OpenAPI document passed to google_api_gateway_api_config, and the example is the template users copy.",
+      "file": "example/examplea/openapi.yaml",
+      "first_seen": "2026-11-18",
+      "fixable": false,
+      "id": "HOLDEN_AI_001",
+      "last_seen": "2026-11-18",
+      "line": 16,
+      "principle": "identity-and-access",
+      "related_resources": [
+        "google_api_gateway_api_config.main",
+        "google_endpoints_service_consumers_iam_member.consumers"
+      ],
+      "remediation": "Require the API key only (or put both schemes in one security entry and pin the issuer to a specific service account's JWKS); document why a bare accounts.google.com scheme must not be an alternative.",
+      "resource": "module.api_gateway",
+      "severity": "HIGH",
+      "status": "fixed",
+      "suppression_reason": null,
+      "title": "Example OpenAPI spec accepts any Google-signed ID token as an alternative to the API key, so any service account anywhere can call the API",
+      "unresolved_since": null
+    }
+  ],
+  "scan_date": "2026-11-18T13:30:00Z",
+  "scan_path": ".",
+  "suggested_policies": [],
+  "suggested_suppressions": []
+}
