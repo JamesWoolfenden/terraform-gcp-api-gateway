@@ -46,14 +46,14 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [google-beta_google_api_gateway_api.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/api_gateway_api) | resource |
-| [google-beta_google_api_gateway_api_config.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/api_gateway_api_config) | resource |
-| [google-beta_google_api_gateway_api_iam_member.viewers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/api_gateway_api_iam_member) | resource |
-| [google-beta_google_api_gateway_gateway.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/api_gateway_gateway) | resource |
-| [google-beta_google_api_gateway_gateway_iam_member.viewers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/api_gateway_gateway_iam_member) | resource |
+| [google-beta_google_api_gateway_api.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_api_gateway_api) | resource |
+| [google-beta_google_api_gateway_api_config.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_api_gateway_api_config) | resource |
+| [google-beta_google_api_gateway_api_iam_member.viewers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_api_gateway_api_iam_member) | resource |
+| [google-beta_google_api_gateway_gateway.main](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_api_gateway_gateway) | resource |
+| [google-beta_google_api_gateway_gateway_iam_member.viewers](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/google_api_gateway_gateway_iam_member) | resource |
 | [google_endpoints_service_consumers_iam_member.consumers](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/endpoints_service_consumers_iam_member) | resource |
 | [google_project_service.managed_service](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_service) | resource |
-| [data.google_project.current](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
+| [google_project.current](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/project) | data source |
 
 ## Inputs
 
