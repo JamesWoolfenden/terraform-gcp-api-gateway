@@ -1,0 +1,49 @@
+# OpenAPI 2.0 spec for API Gateway. The backend is a private Cloud Run service;
+# the gateway calls it with an ID token for the dedicated backend SA.
+swagger: "2.0"
+info:
+  title: example-api
+  description: Example API fronting a private Cloud Run service
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+x-google-backend:
+  address: https://hello-abc123-nw.a.run.app
+  deadline: 30.0
+  protocol: h2
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: x-api-key
+    in: header
+  google_id_token:
+    authorizationUrl: ""
+    flow: implicit
+    type: oauth2
+    x-google-issuer: https://accounts.google.com
+    x-google-jwks_uri: https://www.googleapis.com/oauth2/v3/certs
+    x-google-audiences: example-api
+security:
+  - api_key: []
+  - google_id_token: []
+paths:
+  /hello:
+    get:
+      summary: Say hello
+      operationId: hello
+      responses:
+        "200":
+          description: A greeting
+          schema:
+            type: string
+  /healthz:
+    get:
+      summary: Health check (still requires an API key)
+      operationId: healthz
+      security:
+        - api_key: []
+      responses:
+        "200":
+          description: OK
